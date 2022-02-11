@@ -2,7 +2,7 @@ import pygame
 from Player import Player
 
 # Define the size of the game window
-WIDTH = 1200
+WIDTH = 1000
 HEIGHT = 800
 # make the game window object
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
