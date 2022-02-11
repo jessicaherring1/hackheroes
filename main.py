@@ -1,17 +1,19 @@
 import pygame
 from Player import Player
+from Enemy import Enemy 
 
 # Define the size of the game window
-WIDTH = 1200
-HEIGHT = 800
+WIDTH = 800
+HEIGHT = 600
 # make the game window object
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 # name the game window
-pygame.display.set_caption("Best game")
+pygame.display.set_caption("Hackheroes")
 
 FPS=60
 
 player1= Player(200, 100)
+enemy1 = Enemy(500, 500)
 
 # yellowShipImg = pygame.image.load("Assets/spaceship_yellow.png")
 # redShipImg = pygame.image.load("Assets/spaceship_red.png")
@@ -25,6 +27,7 @@ def main():
 
     # while the game is running
     while running:
+        WINDOW.fill((0,0,0))
         # this makes it so this function can run at most FPS times/sec
         clock.tick(FPS)
 
@@ -35,6 +38,7 @@ def main():
                pass
 
         player1.render(WINDOW)
+        enemy1.render(WINDOW)
 
         # this gets a list of booleans showing which keys are currently pressed
         keysPressed = pygame.key.get_pressed()
@@ -45,7 +49,7 @@ def main():
         elif keysPressed[pygame.K_s]== True:
             player1.y+= player1.speed
 
-        WINDOW.fill((0,0,0))
+
         # put code here that should be run every frame
          # of your game             
         pygame.display.update()
