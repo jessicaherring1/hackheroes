@@ -1,4 +1,5 @@
 import pygame
+from Player import Player
 
 class Enemy:
 
@@ -7,6 +8,12 @@ class Enemy:
     height = 20 
     speed = 10
     isDead = False
+    easing = .05
+    topBound = 0
+    bottomBound = 0
+    leftBound = 0
+    rightBound = 0
+
 
 
 # health, width, height, speed, x, y, isDead
@@ -21,3 +28,15 @@ class Enemy:
 
         ## add easing function 
         ## enemies will ease towards the heroes(players)
+    def ease(self, aPlayerX, aPlayerY):
+        dx = aPlayerX - self.x
+        self.x += dx * self.easing
+
+        dy = aPlayerY - self.y
+        self.y += dy * self.easing
+
+    def resetEnemyBoundaries(self):
+        self.topBound = self.y
+        self.bottomBound = self.y + self.size
+        self.leftBouond = self.x
+        self.rightBound = self.x + self.size

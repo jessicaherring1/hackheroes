@@ -55,6 +55,7 @@ def main():
         if keysPressed[pygame.K_a]== True:
             player1.x-= player1.speed
 
+        enemy1.ease(player1.x, player1.y)
 
         # put code here that should be run every frame
          # of your game             
