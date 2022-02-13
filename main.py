@@ -48,6 +48,12 @@ def main():
 
         elif keysPressed[pygame.K_s]== True:
             player1.y+= player1.speed
+        
+        elif keysPressed[pygame.K_d]== True:
+            player1.x+= player1.speed
+
+        elif keysPressed[pygame.K_a]== True:
+            player1.x-= player1.speed
 
 
         # put code here that should be run every frame
