@@ -9,6 +9,11 @@ class Enemy:
     speed = 10
     isDead = False
     easing = .05
+    topBound = 0
+    bottomBound = 0
+    leftBound = 0
+    rightBound = 0
+
 
 
 # health, width, height, speed, x, y, isDead
@@ -29,3 +34,9 @@ class Enemy:
 
         dy = aPlayerY - self.y
         self.y += dy * self.easing
+
+    def resetEnemyBoundaries(self):
+        self.topBound = self.y
+        self.bottomBound = self.y + self.size
+        self.leftBouond = self.x
+        self.rightBound = self.x + self.size
