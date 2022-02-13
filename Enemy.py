@@ -40,3 +40,13 @@ class Enemy:
         self.bottomBound = self.y + self.size
         self.leftBouond = self.x
         self.rightBound = self.x + self.size
+
+    def enemyHit(self, aPlayer):
+        if(self.topBound < aPlayer.bottomBound):
+            if(self.bottomBound > aPlayer.topBound):
+                if(self.rightBound > aPlayer.leftBound):
+                    if(self.leftBound < aPlayer.rightBound):
+                        print("enemy is hit")
+
+        
+

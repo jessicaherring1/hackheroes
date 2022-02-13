@@ -40,6 +40,9 @@ def main():
         player1.render(WINDOW)
         enemy1.render(WINDOW)
 
+        enemy1.resetEnemyBoundaries
+        player1.resetBoundaries
+
         # this gets a list of booleans showing which keys are currently pressed
         keysPressed = pygame.key.get_pressed()
 
@@ -56,6 +59,11 @@ def main():
             player1.x-= player1.speed
 
         enemy1.ease(player1.x, player1.y)
+        enemy1.enemyHit(player1)
+
+    
+
+        #pygame.Rect.colliderect(player1, enemy1)
 
         # put code here that should be run every frame
          # of your game             
