@@ -46,13 +46,13 @@ def main():
         if keysPressed[pygame.K_w]== True:
             player1.y-=player1.speed
 
-        elif keysPressed[pygame.K_s]== True:
+        if keysPressed[pygame.K_s]== True:
             player1.y+= player1.speed
         
-        elif keysPressed[pygame.K_d]== True:
+        if keysPressed[pygame.K_d]== True:
             player1.x+= player1.speed
 
-        elif keysPressed[pygame.K_a]== True:
+        if keysPressed[pygame.K_a]== True:
             player1.x-= player1.speed
 
 

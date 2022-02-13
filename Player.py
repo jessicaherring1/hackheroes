@@ -6,8 +6,8 @@ import pygame
 class Player:
 
     health = 5
-    width = 100
-    height = 100
+    width = 20
+    height = 20
     speed = 10
     isDead = False
 
