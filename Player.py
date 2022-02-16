@@ -8,9 +8,7 @@ class Player:
     health = 5
     width = 20
     height = 20
-    speed = 10
     isDead = False
-
     runSpeed = 5
     
     topBound = 0
@@ -39,8 +37,7 @@ class Player:
         if self.movingLeft == True:
             self.x-= self.runSpeed
         if self.movingUp:
-            #self.y-= self.runSpeed
-            self.y-=self.speed
+            self.y-= self.runSpeed
         if self.movingDown:
             self.y+= self.runSpeed
         if self.x <= 0:
