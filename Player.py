@@ -52,6 +52,6 @@ class Player:
     
     def resetBoundaries(self):
         self.topBound = self.y
-        self.bottomBound = self.y + self.size
+        self.bottomBound = self.y + self.height
         self.leftBouond = self.x
-        self.rightBound = self.x + self.size
+        self.rightBound = self.x + self.width
