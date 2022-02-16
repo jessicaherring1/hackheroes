@@ -38,7 +38,7 @@ class Enemy:
     def resetEnemyBoundaries(self):
         self.topBound = self.y
         self.bottomBound = self.y + self.height
-        self.leftBouond = self.x
+        self.leftBound = self.x
         self.rightBound = self.x + self.width
 
     def enemyHit(self, aPlayer):
@@ -47,6 +47,8 @@ class Enemy:
                 if(self.rightBound > aPlayer.leftBound):
                     if(self.leftBound < aPlayer.rightBound):
                         print("enemy is hit")
+
+        # else: print ("not hit")
 
         
 

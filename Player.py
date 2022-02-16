@@ -42,8 +42,8 @@ class Player:
             self.y+= self.runSpeed
         if self.x <= 0:
             self.x = 0
-        if self.x >= 800: #width of window
-            self.x = 800 - self.width - 1
+        # if self.x >= 800: #width of window
+        #     self.x = 800 - self.width - 1
         if self.y < 0:
             self.y = 0
         if self.y >= 600: #height of window
@@ -53,5 +53,5 @@ class Player:
     def resetBoundaries(self):
         self.topBound = self.y
         self.bottomBound = self.y + self.height
-        self.leftBouond = self.x
+        self.leftBound = self.x
         self.rightBound = self.x + self.width
