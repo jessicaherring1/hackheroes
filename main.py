@@ -11,13 +11,12 @@ HEIGHT = 530
 size = (WIDTH, HEIGHT)
 screen = pygame.display.set_mode(size)
 
-# clock = pygame.time.Clock
+enemyList = []
 
-# dt = clock.tick()
-# timeSinceLastEnemySpawn += dt
-# if timeSinceLastEnemySpawn > 5000:
-#     # spawn enemy
-#     timeSinceLastEnemySpawn = 0
+enemyClock = pygame.time.Clock
+
+timeSince = 5000
+
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT)) # make the game window object
 
@@ -109,6 +108,13 @@ def main():
             #pygame.Rect.colliderect(player1, enemy1)
                        
             pygame.display.update()
+
+            # timeSinceLastSpawn = 0
+            # dt = enemyClock.tick()
+            # timeSinceLastSpawn += dt
+            # if timeSinceLastSpawn > timeSince:
+            #      enemyList.append(Enemy( 100, 100)) 
+            # timeSinceLastSpawn = 0
 
         if state == 2: #instructions
             pass

@@ -20,6 +20,7 @@ class Enemy:
     def __init__(self, tempX, tempY):
         self.x = tempX
         self.y = tempY
+        
 
     def render(self, aSurface):
         enemyRect = pygame.Rect(self.x, self.y, self.width, self.height)
