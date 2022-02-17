@@ -8,6 +8,14 @@ from Button import Button
 WIDTH = 800
 HEIGHT = 600
 
+# clock = pygame.time.Clock
+
+# dt = clock.tick()
+# timeSinceLastEnemySpawn += dt
+# if timeSinceLastEnemySpawn > 5000:
+#     # spawn enemy
+#     timeSinceLastEnemySpawn = 0
+
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT)) # make the game window object
 
 
@@ -63,7 +71,7 @@ def main():
             if keysPressed[pygame.K_s]== True:
                 player1.movingDown = True
             
-            if keysPressed[pygame.K_d]== True:
+            if keysPressed[pygame.K_d]== True and player1.rightBound < 750 :
                 player1.movingRight = True
 
             if keysPressed[pygame.K_a]== True:
@@ -75,13 +83,14 @@ def main():
             if keysPressed[pygame.K_s]== False:
                 player1.movingDown = False
             
-            if keysPressed[pygame.K_d]== False:
+            if keysPressed[pygame.K_d]== False or player1.rightBound >= 750:
                 player1.movingRight = False
 
             if keysPressed[pygame.K_a]== False:
                 player1.movingLeft = False
 
             enemy1.ease(player1.x, player1.y)
+            
             enemy1.enemyHit(player1)
 
             #pygame.Rect.colliderect(player1, enemy1)
