@@ -20,7 +20,7 @@ class Button:
 
         myFont = pygame.font.SysFont('Calibri', 20, True, False)
         text = myFont.render(self.text, True, (0, 0, 0))
-        aSurface.blit(text, [self.x, self.y])
+        aSurface.blit(text, [self.x +27, self.y + (self.h /4)+5])
 
     #def isBetween(aVal, firstBound, secondBound):
     #    return (aVal>= firstBound and aVal <= secondBound)
