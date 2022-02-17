@@ -47,6 +47,3 @@ class Enemy:
                 if(self.rightBound > aPlayer.leftBound):
                     if(self.leftBound < aPlayer.rightBound):
                         print("enemy is hit")
-
-        
-
