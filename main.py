@@ -6,7 +6,10 @@ from Button import Button
 
 # Define the size of the game window
 WIDTH = 800
-HEIGHT = 600
+HEIGHT = 530
+
+size = (WIDTH, HEIGHT)
+screen = pygame.display.set_mode(size)
 
 # clock = pygame.time.Clock
 
@@ -17,6 +20,9 @@ HEIGHT = 600
 #     timeSinceLastEnemySpawn = 0
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT)) # make the game window object
+
+bg = pygame.image.load("background.jpg").convert()
+
 
 
 pygame.display.set_caption("Hackheroes") # name the game window
@@ -41,7 +47,8 @@ def main():
 
     # while the game is running
     while running:
-        WINDOW.fill((0,0,0))
+        #WINDOW.fill((0,0,0))
+        screen.blit(bg, [0, 0])
         
         clock.tick(FPS) # this makes it so this function can run at most FPS times/sec
 
@@ -51,10 +58,10 @@ def main():
                running = False
                pass
         
-        if state ==0: # home screen
+        if state == 0: # home screen
             pass
 
-        if state == 1: #game state
+        if state == 1: #game state (level 1)
 
             player1.render(WINDOW)
             player1.move()
@@ -90,6 +97,10 @@ def main():
 
             if keysPressed[pygame.K_a]== False:
                 player1.movingLeft = False
+            if button1.isInButton():
+                button2 = Button( 100, 100, 50, 50, (255, 0, 255), "hello")
+                button2.render(WINDOW)
+                print("button 2")
 
             enemy1.ease(player1.x, player1.y)
             
@@ -98,4 +109,14 @@ def main():
             #pygame.Rect.colliderect(player1, enemy1)
                        
             pygame.display.update()
+
+        if state == 2: #instructions
+            pass
+        if state == 3: #credits 
+            pass
+        if state == 4: #win screen
+            pass
+        if state == 5: #lose screen
+            pass
+
 main()

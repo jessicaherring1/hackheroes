@@ -23,7 +23,8 @@ class Button:
         #mousePressed = pygame.mouse.get_pressed()
     #  if mousePressed:
         pygame.event.get()
-        return (pygame.mouse.get_pressed()[0] and self.button.collidePoint(pygame.mouse.get_pos()))
+        print("test")
+        return (pygame.mouse.get_pressed()[0] and self.button.collidepoint(pygame.mouse.get_pos()))
             
 
   
