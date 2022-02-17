@@ -77,10 +77,10 @@ def main():
             if keysPressed[pygame.K_w]== True:
                 player1.movingUp = True
 
-            if keysPressed[pygame.K_s]== True:
+            if keysPressed[pygame.K_s]== True and player1.bottomBound < HEIGHT:
                 player1.movingDown = True
             
-            if keysPressed[pygame.K_d]== True and player1.rightBound < 750 :
+            if keysPressed[pygame.K_d]== True and player1.rightBound < WIDTH :
                 player1.movingRight = True
 
             if keysPressed[pygame.K_a]== True:
@@ -89,16 +89,16 @@ def main():
             if keysPressed[pygame.K_w]== False:
                 player1.movingUp = False
 
-            if keysPressed[pygame.K_s]== False:
+            if keysPressed[pygame.K_s]== False or player1.bottomBound >= HEIGHT:
                 player1.movingDown = False
             
-            if keysPressed[pygame.K_d]== False or player1.rightBound >= 750:
+            if keysPressed[pygame.K_d]== False or player1.rightBound >= WIDTH:
                 player1.movingRight = False
 
             if keysPressed[pygame.K_a]== False:
                 player1.movingLeft = False
             if button1.isInButton():
-                button2 = Button( 100, 100, 50, 50, (255, 0, 255), "hello")
+                button2 = Button( 100, 100, 50, 50, (255, 0, 255), "world")
                 button2.render(WINDOW)
                 print("button 2")
 

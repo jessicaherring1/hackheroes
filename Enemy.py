@@ -50,7 +50,5 @@ class Enemy:
 
         # else: print ("not hit")
 
-
-
         
 

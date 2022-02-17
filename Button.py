@@ -1,8 +1,10 @@
 # button
 import pygame
+pygame.font.init()
 #from pynput.mouse import Button, Controller
 
 class Button:
+    
 
     def __init__(self, tempX, tempY, tempW, tempH, tempColor, tempText):
             self.x = tempX #x location of button
@@ -16,6 +18,10 @@ class Button:
         self.button = pygame.Rect(self.x, self.y, self.w, self.h)
         pygame.draw.rect(aSurface, self.color, self.button)
 
+        myFont = pygame.font.SysFont('Calibri', 20, True, False)
+        text = myFont.render(self.text, True, (0, 0, 0))
+        aSurface.blit(text, [250, 250])
+
     #def isBetween(aVal, firstBound, secondBound):
     #    return (aVal>= firstBound and aVal <= secondBound)
 
@@ -23,7 +29,6 @@ class Button:
         #mousePressed = pygame.mouse.get_pressed()
     #  if mousePressed:
         pygame.event.get()
-        print("test")
         return (pygame.mouse.get_pressed()[0] and self.button.collidepoint(pygame.mouse.get_pos()))
             
 

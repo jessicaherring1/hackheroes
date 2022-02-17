@@ -1,11 +1,10 @@
 import pygame
-from sqlalchemy import false
 
 
 class Animation:
     # variables
     index = 0
-    isAnimating = false
+    isAnimating = False
 
     def __init__(self, tempImages, tempSpeed, tempScale):
         self.Images = tempImages
@@ -22,7 +21,7 @@ class Animation:
         # resets the index if it is too big
         if (self.index >= len(self.Images)):
             self.index = 0
-            self.isAnimating = false
+            self.isAnimating = False
 
     # display an image of the animation
 
