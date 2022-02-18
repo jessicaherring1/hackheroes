@@ -135,9 +135,6 @@ for i in range(1,9):
     img = pygame.image.load("player1RunRight/RR"+str(i)+".png")
     player1RunRightImages.append(img)
 player1RunRight = Animation(player1RunRightImages, 0.2, 2)
-# print("alston")
-# print(len(player1RunRightImages))
-# print("jess")
 
 player1RunLeftImages = []
 for i in range(1,9):
@@ -213,10 +210,8 @@ def main():
             enemy1.render(WINDOW)
             enemy1.resetEnemyBoundaries()
 
-           # WINDOW.blit(enemyRunRightImages[0], (50, 50))
-
-            player1Idle.isAnimating=True
-            player1Idle.display(100, 100, WINDOW)
+            # player1Idle.isAnimating=True
+            # player1Idle.display(100, 100, WINDOW)
 
             # button1.render(WINDOW)
             keyPressed(player1)
@@ -261,26 +256,44 @@ def keyPressed(player):
 
     if keysPressed[pygame.K_w]== True:
         player.movingUp = True
-        player2Idle.isAnimating = True
-        #add: player1Idle.isAnimating = True
+        # w
+        
 
     if keysPressed[pygame.K_s]== True and player.bottomBound < HEIGHT:
         player.movingDown = True
-        player2Idle.isAnimating = True
-        #add: player1Idle.isAnimating = True
+        # if state ==4:
+        #     player1Idle.isAnimating = True
+        #     player1Idle.display(player.x, player.y, WINDOW)
+        # if state == 5:
+        #    player2Idle.isAnimating = True
+        #    player2Idle.display(player.x, player.y, WINDOW)
+
+        
     
     if keysPressed[pygame.K_d]== True and player.rightBound < WIDTH :
         player.movingRight = True
-        player2RunRight.isAnimating = True
-        #add: player1RunRight.isAnimating = True
+        if state ==4:
+            player1RunRight.isAnimating = True
+            player1RunRight.display(player.x, player.y, WINDOW)
+        if state == 5:
+           player2RunRight.isAnimating = True
+           player2RunRight.display(player.x, player.y, WINDOW)
+    else:
+        player1RunRight.isAnimating = False
+        player2RunRight.isAnimating = False
+        
 
     if keysPressed[pygame.K_a]== True:
         player.movingLeft = True
-        player2RunLeft.isAnimating = True
-        player2RunLeft.display(player.x, player.y, WINDOW)
-        #add: player1RunLeft.isAnimating = True
+        if state==4:
+            player1RunLeft.isAnimating = True
+            player1RunLeft.display(player.x, player.y, WINDOW)
+        if state==5:
+            player2RunLeft.isAnimating = True
+            player2RunLeft.display(player.x, player.y, WINDOW)
     else:
         player2RunLeft.isAnimating = False 
+        player1RunLeft.isAnimating = False
 
     if keysPressed[pygame.K_w]== False:
         player.movingUp = False
