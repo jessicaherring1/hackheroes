@@ -29,10 +29,10 @@ class Animation:
         if (self.isAnimating):
             imageIndex = int (self.index)
             img = self.Images[imageIndex]
-            aSurface.blit(img, x, y)
+            aSurface.blit(img, (x, y))
 
             #increment the index of the images to display
             self.next()
         else :
             img = self.Images[0]
-            aSurface.blit(img, x, y)
+            aSurface.blit(img, (x, y))
