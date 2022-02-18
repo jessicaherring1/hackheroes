@@ -92,87 +92,87 @@ enemyIdle= Animation(enemyIdleImages, 0.2, 1)
 player2RunRightSprite = spritesheet('player2RunRight.png')
 player2RunRightImages=[]
 player2RunRightImages = player2RunRightSprite.load_strip((0, 0, 100, 100), 8)
-player2RunRight = Animation(player2RunRightImages, 0.2, 1)
+player2RunRight = Animation(player2RunRightImages, 0.2, 2)
 
 player2RunLeftSprite = spritesheet('player2RunLeft.png')
 player2RunLeftImages=[]
 player2RunLeftImages = player2RunLeftSprite.load_strip((0, 0, 100, 100), 8)
-player2RunLeft= Animation(player2RunLeftImages, 0.2, 1)
+player2RunLeft= Animation(player2RunLeftImages, 0.2, 2)
 
 player2DeathRightSprite = spritesheet('player2DeathRight.png')
 player2DeathRightImages=[]
 player2DeathRightImages = player2DeathRightSprite.load_strip((0, 0, 100, 100), 4)
-player2DeathRight= Animation(player2DeathRightImages, 0.2, 1)
+player2DeathRight= Animation(player2DeathRightImages, 0.2, 2)
 
 player2DeathLeftSprite = spritesheet('player2DeathLeft.png')
 player2DeathLeftImages=[]
 player2DeathLeftImages = player2DeathLeftSprite.load_strip((0, 0, 100, 100), 4)
-player2DeathLeft= Animation(player2DeathLeftImages, 0.2, 1)
+player2DeathLeft= Animation(player2DeathLeftImages, 0.2, 2)
 
 player2AttackRightSprite = spritesheet('player2AttackRight.png')
 player2AttackRightImages=[]
 player2AttackRightImages = player2AttackRightSprite.load_strip((0, 0, 100, 100), 4)
-player2AttackRight= Animation(player2AttackRightImages, 0.2, 1)
+player2AttackRight= Animation(player2AttackRightImages, 0.2, 2)
 
 player2AttackLeftSprite = spritesheet('player2AttackLeft.png')
 player2AttackLeftImages=[]
 player2AttackLeftImages = player2AttackLeftSprite.load_strip((0, 0, 100, 100), 4)
-player2AttackLeft= Animation(player2AttackLeftImages, 0.2, 1)
+player2AttackLeft= Animation(player2AttackLeftImages, 0.2, 2)
 
 player2IdleSprite = spritesheet('player2Idle.png')
 player2IdleImages=[]
 player2IdleImages = player2IdleSprite.load_strip((0, 0, 100, 100), 4)
-player2Idle= Animation(player2IdleImages, 0.2, 1)
+player2Idle= Animation(player2IdleImages, 0.2, 2)
 
 #transformation 
 transformationSprite = spritesheet('transformation.png')
 transformationImages=[]
 transformationImages = transformationSprite.load_strip((0, 0, 100, 100), 7)
-transformation= Animation(transformationImages, 0.2, 1)
+transformation= Animation(transformationImages, 0.2, 2)
 
 #player 1 (woman)
 player1RunRightImages = []
 for i in range(1,9):
     img = pygame.image.load("player1RunRight/RR"+str(i)+".png")
     player1RunRightImages.append(img)
-player1RunRight = Animation(player1RunRightImages, 0.2, 2)
+player1RunRight = Animation(player1RunRightImages, 0.2, 2.5)
 
 
 player1RunLeftImages = []
 for i in range(1,9):
     img = pygame.image.load("player1RunLeft/RL"+str(i)+".png")
     player1RunLeftImages.append(img)
-player1RunLeft = Animation(player1RunLeftImages, 0.2, 2)
+player1RunLeft = Animation(player1RunLeftImages, 0.2, 2.5)
 
 player1AttackLeftImages = []
 for i in range(1,12):
     img = pygame.image.load("player1AttackLeft/AL"+str(i)+".png")
     player1AttackLeftImages.append(img)
-player1AttackLeft = Animation(player1AttackLeftImages, 0.2, 2)
+player1AttackLeft = Animation(player1AttackLeftImages, 0.2, 2.5)
 
 player1AttackRightImages = []
 for i in range(1,12):
     img = pygame.image.load("player1AttackRight/AR"+str(i)+".png")
     player1AttackRightImages.append(img)
-player1AttackRight = Animation(player1AttackRightImages, 0.2, 2)
+player1AttackRight = Animation(player1AttackRightImages, 0.2, 2.5)
 
 player1DeathLeftImages = []
 for i in range(1,11):
     img = pygame.image.load("player1DeathLeft/DL"+str(i)+".png")
     player1DeathLeftImages.append(img)
-player1DeathLeft = Animation(player1DeathLeftImages, 0.2, 2)
+player1DeathLeft = Animation(player1DeathLeftImages, 0.2, 2.5)
 
 player1DeathRightImages = []
 for i in range(1,11):
     img = pygame.image.load("player1DeathRight/DR"+str(i)+".png")
     player1DeathRightImages.append(img)
-player1DeathRight = Animation(player1DeathRightImages, 0.2, 2)
+player1DeathRight = Animation(player1DeathRightImages, 0.2, 2.5)
 
 player1IdleImages = []
 for i in range(1,6):
     img = pygame.image.load("player1Idle/I"+str(i)+".png")
     player1IdleImages.append(img)
-player1Idle = Animation(player1IdleImages, 0.2, 2)
+player1Idle = Animation(player1IdleImages, 0.2, 2.5)
 
 def main():
     clock = pygame.time.Clock()
