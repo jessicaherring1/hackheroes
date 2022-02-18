@@ -13,12 +13,10 @@ HEIGHT = 530
 size = (WIDTH, HEIGHT)
 screen = pygame.display.set_mode(size)
 
-enemyList = []
-print("test")
 
-# enemyClock = pygame.time.Clock()
+enemyClock = pygame.time.Clock()
 
-# timeSince = 5000
+timeSince = 5000
 
 totalSpawnEnemies = 10
 
@@ -137,9 +135,7 @@ for i in range(1,9):
     img = pygame.image.load("player1RunRight/RR"+str(i)+".png")
     player1RunRightImages.append(img)
 player1RunRight = Animation(player1RunRightImages, 0.2, 2)
-# print("alston")
-# print(len(player1RunRightImages))
-# print("jess")
+
 
 player1RunLeftImages = []
 for i in range(1,9):
@@ -187,6 +183,8 @@ def main():
 
     running = True #boolean that represents whether the game should continue to run or not
 
+    enemyList = []
+
     # while the game is running
     while running:
         #WINDOW.fill((0,0,0))
@@ -222,17 +220,12 @@ def main():
            # WINDOW.blit(enemyRunRightImages[0], (50, 50))
 
 
-            transformation.isAnimating=True
-            transformation.display(100, 100, WINDOW)
+            # transformation.isAnimating=True
+            # transformation.display(100, 100, WINDOW)
 
-            player1Idle.isAnimating=True
-            player1Idle.display(100, 100, WINDOW)
+            # player1Idle.isAnimating=True
+            # player1Idle.display(100, 100, WINDOW)
 
-            player1Idle.isAnimating=True
-            player1Idle.display(100, 100, WINDOW)
-
-            player1Idle.isAnimating=True
-            player1Idle.display(100, 100, WINDOW)
 
             # button1.render(WINDOW)
             keyPressed(player1)
@@ -255,8 +248,6 @@ def main():
                 enemyList.append(Enemy(random.randint(0,WIDTH), random.randint(0, HEIGHT))) 
                 timeSinceLastSpawn = 0
                 numEnemySpawn += 1
-
-        print(len(enemyList))
 
         for enemy in enemyList:
             enemy.render(WINDOW)
