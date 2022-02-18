@@ -29,6 +29,7 @@ class Animation:
         if (self.isAnimating):
             imageIndex = int (self.index)
             img = self.Images[imageIndex]
+            img = pygame.transform.scale(img, (img.get_height() * self.scale, img.get_height() * self.scale))
             aSurface.blit(img, (x, y))
 
             #increment the index of the images to display

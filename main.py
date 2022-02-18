@@ -56,37 +56,37 @@ guyWalkingLeft = Animation(guyWalkingLeftImages, 0.2, 1.5)
 enemyRunRightSprite = spritesheet('enemyRunRight.png')
 enemyRunRightImages=[]
 enemyRunRightImages = enemyRunRightSprite.load_strip((0, 0, 150, 150), 8)
-enemyRunRight = Animation(enemyRunRightImages, 0.2, 1)
+enemyRunRight = Animation(enemyRunRightImages, 0.2, 2)
 
 enemyRunLeftSprite = spritesheet('enemyRunLeft.png')
 enemyRunLeftImages=[]
 enemyRunLeftImages = enemyRunLeftSprite.load_strip((0, 0, 150, 150), 8)
-enemyRunLeft= Animation(enemyRunLeftImages, 0.2, 1)
+enemyRunLeft= Animation(enemyRunLeftImages, 0.2, 2)
 
 enemyDeathRightSprite = spritesheet('enemyDeathRight.png')
 enemyDeathRightImages=[]
 enemyDeathRightImages = enemyDeathRightSprite.load_strip((0, 0, 150, 150), 4)
-enemyDeathRight= Animation(enemyDeathRightImages, 0.2, 1)
+enemyDeathRight= Animation(enemyDeathRightImages, 0.2, 2)
 
 enemyDeathLeftSprite = spritesheet('enemyDeathLeft.png')
 enemyDeathLeftImages=[]
 enemyDeathLeftImages = enemyDeathLeftSprite.load_strip((0, 0, 150, 150), 4)
-enemyDeathLeft= Animation(enemyDeathLeftImages, 0.2, 1)
+enemyDeathLeft= Animation(enemyDeathLeftImages, 0.2, 2)
 
 enemyAttackRightSprite = spritesheet('enemyAttackRight.png')
 enemyAttackRightImages=[]
 enemyAttackRightImages = enemyAttackRightSprite.load_strip((0, 0, 150, 150), 8)
-enemyAttackRight= Animation(enemyAttackRightImages, 0.2, 1)
+enemyAttackRight= Animation(enemyAttackRightImages, 0.2, 2)
 
 enemyAttackLeftSprite = spritesheet('enemyAttackLeft.png')
 enemyAttackLeftImages=[]
 enemyAttackLeftImages = enemyAttackLeftSprite.load_strip((0, 0, 150, 150), 8)
-enemyAttackLeft= Animation(enemyAttackLeftImages, 0.2, 1)
+enemyAttackLeft= Animation(enemyAttackLeftImages, 0.2, 2)
 
 enemyIdleSprite = spritesheet('enemyIdle.png')
 enemyIdleImages=[]
 enemyIdleImages = enemyIdleSprite.load_strip((0, 0, 150, 150), 4)
-enemyIdle= Animation(enemyIdleImages, 0.2, 1)
+enemyIdle= Animation(enemyIdleImages, 0.2, 2)
 
 #player 2 (man)
 player2RunRightSprite = spritesheet('player2RunRight.png')
