@@ -4,6 +4,7 @@ from Player import Player
 from Enemy import Enemy 
 from Button import Button
 from Spritesheet import spritesheet
+import random
 
 # Define the size of the game window
 WIDTH = 800
@@ -12,12 +13,13 @@ HEIGHT = 530
 size = (WIDTH, HEIGHT)
 screen = pygame.display.set_mode(size)
 
-#enemyList = []
+enemyList = []
 
-enemyClock = pygame.time.Clock
+# enemyClock = pygame.time.Clock()
 
-timeSince = 5000
+# timeSince = 5000
 
+totalSpawnEnemies = 10
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT)) # make the game window object
 
@@ -129,13 +131,18 @@ transformationImages = transformationSprite.load_strip((0, 0, 100, 100), 7)
 transformation= Animation(transformationImages, 0.2, 1)
 
 #player 1 (woman)
-player1RunRightImages = []
-for i in 7:
-    player1RunRightImages[i+1]= pygame.image.load("RR" + (i+1) +"png")
-player1RunRight = Animation(player1RunRightImages, 0.2, 1)
+# player1RunRightImages = []
+# for i in 7:
+#     player1RunRightImages[i+1]= pygame.image.load("RR" + (i+1) +"png")
+# player1RunRight = Animation(player1RunRightImages, 0.2, 1)
 
 def main():
     clock = pygame.time.Clock()
+    enemyClock = pygame.time.Clock()
+    numEnemySpawn = 0
+
+    timeSince = 5000
+    timeSinceLastSpawn = 0
 
     running = True #boolean that represents whether the game should continue to run or not
 
@@ -173,8 +180,8 @@ def main():
 
            # WINDOW.blit(enemyRunRightImages[0], (50, 50))
 
-            player2AttackLeft.isAnimating=True
-            player2AttackLeft.display(100, 100, WINDOW)
+            transformation.isAnimating=True
+            transformation.display(100, 100, WINDOW)
 
             # button1.render(WINDOW)
             keyPressed(player1)
@@ -190,14 +197,25 @@ def main():
 
             #pygame.Rect.colliderect(player1, enemy1)
                        
-            pygame.display.update()
+                   
+            dt = enemyClock.tick()
+            timeSinceLastSpawn += dt
+            if timeSinceLastSpawn > timeSince and numEnemySpawn <= totalSpawnEnemies:
+                enemyList.append(Enemy(random.randint(0,WIDTH), random.randint(0, HEIGHT))) 
+                timeSinceLastSpawn = 0
+                numEnemySpawn += 1
 
-            # timeSinceLastSpawn = 0
-            # dt = enemyClock.tick()
-            # timeSinceLastSpawn += dt
-            # if timeSinceLastSpawn > timeSince:
-            #      enemyList.append(Enemy( 100, 100)) 
-            # timeSinceLastSpawn = 0
+        print(len(enemyList))
+
+        for enemy in enemyList:
+            enemy.render(WINDOW)
+            enemy.ease(player1.x, player1.y)
+            enemy.resetEnemyBoundaries()
+            enemy.enemyHit(player1)
+
+        # if (numEnemySpawn == 10 and len(enemyList) == 0)
+        # win screen time
+        pygame.display.update()
 
         if state == 5: #man (player2) game
             pass
@@ -213,6 +231,7 @@ def main():
 
         if state == 9: #lose screen man
             pass
+    
 
 def keyPressed(player):
     keysPressed = pygame.key.get_pressed()
@@ -240,5 +259,6 @@ def keyPressed(player):
 
     if keysPressed[pygame.K_a]== False:
         player.movingLeft = False
-
+    
+    
 main()
