@@ -172,7 +172,7 @@ player1IdleImages = []
 for i in range(1,6):
     img = pygame.image.load("player1Idle/I"+str(i)+".png")
     player1IdleImages.append(img)
-player1Idle = Animation(player1IdleImages, 0.2, 2.5)
+player1Idle = Animation(player1IdleImages, 0.2, 2)
 
 def main():
     clock = pygame.time.Clock()
