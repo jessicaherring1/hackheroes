@@ -1,3 +1,4 @@
+from operator import truediv
 import pygame
 from Animation import Animation
 from Player import Player
@@ -32,7 +33,7 @@ pygame.display.set_caption("Hackheroes") # name the game window
 FPS=60 # frames per second
 
 player1= Player(200, 100)
-enemy1 = Enemy(500, 500)
+# enemy1 = Enemy(500, 500)
 button1 = Button( 50, 50, 100, 50, (255, 0, 0), "hello")
 
 
@@ -215,8 +216,8 @@ def main():
             player1.render(WINDOW)
             player1.move()
             player1.resetBoundaries()
-            enemy1.render(WINDOW)
-            enemy1.resetEnemyBoundaries()
+            # enemy1.render(WINDOW)
+            # enemy1.resetEnemyBoundaries()
 
            # WINDOW.blit(enemyRunRightImages[0], (50, 50))
 
@@ -236,9 +237,9 @@ def main():
             #     button2.render(WINDOW)
             #     print("button 2")
 
-            enemy1.ease(player1.x, player1.y)
+            # enemy1.ease(player1.x, player1.y)
             
-            enemy1.enemyHit(player1)
+            # enemy1.enemyHit(player1)
 
             #pygame.Rect.colliderect(player1, enemy1)
                        
@@ -251,10 +252,19 @@ def main():
                 numEnemySpawn += 1
 
         for enemy in enemyList:
-            enemy.render(WINDOW)
+            # enemy.render(WINDOW)
             enemy.ease(player1.x, player1.y)
             enemy.resetEnemyBoundaries()
             enemy.enemyHit(player1)
+            if enemy.dx >= 0:
+                enemyRunRight.isAnimating = True
+                enemyRunRight.display(enemy.x, enemy.y, WINDOW)
+            if enemy.dx < 0:
+                enemyRunLeft.isAnimating = True
+                enemyRunLeft.display(enemy.x, enemy.y, WINDOW)
+            # if enemy.dy >= 0:
+            #     enemyIdle.isAnimating = True
+            #     enemyIdle.display(enemy.x, enemy.y, WINDOW)
 
         # if (numEnemySpawn == 10 and len(enemyList) == 0)
         # win screen time

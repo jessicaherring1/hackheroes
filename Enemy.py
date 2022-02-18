@@ -32,8 +32,8 @@ class Enemy:
         ## add easing function 
         ## enemies will ease towards the heroes(players)
     def ease(self, aPlayerX, aPlayerY):
-        dx = aPlayerX - self.x
-        self.x += dx * self.easing
+        self.dx = aPlayerX - self.x
+        self.x += self.dx * self.easing
 
         dy = aPlayerY - self.y
         self.y += dy * self.easing
