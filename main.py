@@ -14,6 +14,7 @@ size = (WIDTH, HEIGHT)
 screen = pygame.display.set_mode(size)
 
 enemyList = []
+print("test")
 
 # enemyClock = pygame.time.Clock()
 
