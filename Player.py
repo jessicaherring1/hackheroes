@@ -27,9 +27,9 @@ class Player:
         self.x = tempx
         self.y = tempy
 
-    def render(self, aSurface): #CHANGE
-        playerRect = pygame.Rect(self.x, self.y, self.width, self.height)
-        pygame.draw.rect(aSurface, (255,0,255), playerRect)
+    # def render(self, aSurface): #CHANGE
+    #     playerRect = pygame.Rect(self.x, self.y, self.width, self.height)
+    #     pygame.draw.rect(aSurface, (255,0,255), playerRect)
 
     def renderWoman(self, aSurface): #CHANGE
         #womanAnimation.display(self.x, self.y)

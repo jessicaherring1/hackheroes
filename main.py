@@ -6,6 +6,7 @@ from Enemy import Enemy
 from Button import Button
 from Spritesheet import spritesheet
 import random
+pygame.font.init()
 
 # Define the size of the game window
 WIDTH = 800
@@ -178,8 +179,10 @@ player1Idle = Animation(player1IdleImages, 0.2, 2)
 def main():
     clock = pygame.time.Clock()
     enemyClock = pygame.time.Clock()
+    winClock = pygame.time.Clock()
+    timeWinSince = 5000
     numEnemySpawn = 0
-
+    timeSinceGameStart = 0
     timeSince = 5000
     timeSinceLastSpawn = 0
 
@@ -213,7 +216,7 @@ def main():
             pass
 
         if state == 4: #woman (player1) game
-            player1.render(WINDOW)
+            # player1.render(WINDOW)
             player1.move()
             player1.resetBoundaries()
             # enemy1.render(WINDOW)
@@ -250,6 +253,10 @@ def main():
                 enemyList.append(Enemy(random.randint(0,WIDTH), random.randint(0, HEIGHT))) 
                 timeSinceLastSpawn = 0
                 numEnemySpawn += 1
+            if numEnemySpawn == 3:
+                myFont = pygame.font.SysFont('Calibri', 20)
+                text = myFont.render("You Won!!!!", True, (0, 0, 0))
+                WINDOW.blit(text, (WIDTH/2, HEIGHT/2))
 
         for enemy in enemyList:
             # enemy.render(WINDOW)
@@ -266,8 +273,13 @@ def main():
             #     enemyIdle.isAnimating = True
             #     enemyIdle.display(enemy.x, enemy.y, WINDOW)
 
-        # if (numEnemySpawn == 10 and len(enemyList) == 0)
-        # win screen time
+          
+        dt1 = winClock.tick()
+        timeSinceGameStart += dt1
+        if timeSinceGameStart == timeWinSince:
+            myFont = pygame.font.SysFont('Calibri', 20)
+            text = myFont.render("You Won!!!!", True, (0, 0, 0))
+            WINDOW.blit(text, (WIDTH/2, HEIGHT/2))
         pygame.display.update()
 
         if state == 5: #man (player2) game
